@@ -1,0 +1,26 @@
+<h1>Restaurant food</h1>
+
+<p>Pedidos ingresados</p>
+
+{{pedidosIngresados | json}}
+
+<p>Pedidos para entregar</p>
+
+<ul>
+    @for (item of pedidoslistos; track $index) {
+       <li>
+        {{item | json}} <button (click)="entregar()">Entregar!</button>
+       </li> 
+    }
+</ul>
+
+<app-delivery></app-delivery>
+
+POS- Point of Sell
+<br>
+
+<app-pos (orderemit)="savePedido($event)"></app-pos>
+
+<app-kitchen (pedidolisto)="agregarAentrega($event)"></app-kitchen>
+
+

@@ -1,0 +1,7 @@
+<p>Pedidos listos para entregar:</p>
+
+<ul>
+    @for (item of pedidosEntregar; track $index) {
+    <li>{{item.number}} - {{item.name}}</li><button (click)="entregar()">Entregar</button>
+    }
+</ul>

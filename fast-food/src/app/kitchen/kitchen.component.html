@@ -1,0 +1,19 @@
+<div style="border: 2px solid red ">
+    <div style="padding: 2rem;">
+        <h1>Componente cocina</h1>
+
+        <p><strong>Pendiente de cocinar</strong></p>
+<ul>
+    @for (item of pedidosPendientes; track $index) {
+
+        <p>({{item.number}}) {{item.description}} <button (click)="cocinar($index)">Cocinar</button></p>
+        }
+</ul>
+      
+
+        <p><strong>Pedidos en coccion</strong></p>
+
+        <p>`{{pedidoencocion.number}} - {{pedidoencocion.description}}`</p> <button (click)="terminarCoccion(pedidoencocion)">Pedido terminado!</button>
+    </div>
+
+</div>
